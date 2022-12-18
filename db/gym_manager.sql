@@ -18,8 +18,7 @@ CREATE TABLE exercises (
     capacity int,
     instructor VARCHAR(255),
     time VARCHAR(255),
-    location VARCHAR(255),
-    client_id INT NOT NULL REFERENCES clients(id)
+    location VARCHAR(255)
 );
 
 CREATE TABLE bookings (
