@@ -7,8 +7,7 @@ CREATE TABLE clients (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
-    address VARCHAR(255),
-    phone_no int,
+    phone_no VARCHAR(255),
     gender VARCHAR(255),
     medi_cond VARCHAR(255)
 );
