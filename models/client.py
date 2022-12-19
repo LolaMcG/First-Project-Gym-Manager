@@ -7,3 +7,6 @@ class Client:
         self.gender = gender
         self.medi_cond = medi_cond
         self.id = id
+    
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
