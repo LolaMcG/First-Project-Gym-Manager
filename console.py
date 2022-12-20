@@ -58,7 +58,6 @@ booking_repo.save(booking11)
 # for each_client_that_we_are_currently_looking_at_in_the_loop in client_list:
 #     print(each_client_that_we_are_currently_looking_at_in_the_loop.__dict__)
 
-
 # client_repo.select_client(client_Bob.id)
 # print(client_Bob.first_name, client_Bob.last_name, client_Bob.phone_no, client_Bob.gender, client_Bob.medi_cond)
 
@@ -87,3 +86,7 @@ booking_repo.save(booking11)
 # print(which_exercise.description, which_exercise.instructor)
 
 # exercise_repo.delete_exercise(exercise_kick.id)
+
+# list_of_bookings = booking_repo.select_all()
+# for each_booking in list_of_bookings:
+#     print(each_booking.client.first_name, each_booking.exercise.description)

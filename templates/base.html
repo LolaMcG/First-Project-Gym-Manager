@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Big Buff Gym</title>
 </head>
 <body>
-    
+    <ul>
+        <li>Big Buff Classes</li>
+        <li>
+            <a href="/clients">Big Buff Clients</a>
+        </li>
+        
+        <li>Bookings</li>
+    </ul>
+
+    <section>
+        {% block content %}
+        
+        {% endblock %}
+        {% block otherContent%}
+        
+        {% endblock %}
+
+
+    </section>
 </body>
 </html>

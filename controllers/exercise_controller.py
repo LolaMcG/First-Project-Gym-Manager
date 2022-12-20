@@ -4,5 +4,5 @@ from models.exercise import Exercise
 import repos.exercise_repo as exercise_repo
 import repos.client_repo as client_repo
 
-exercise_blueprint = Blueprint("exercises", __name__)
+exercises_blueprint = Blueprint("exercises", __name__)
 
