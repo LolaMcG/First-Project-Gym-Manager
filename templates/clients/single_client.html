@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="/clients">Back to Big Buff Clients</a>
+
+<h1>{{client.first_name}} {{client.last_name}} is booked in to the following classes:</h1>
+
+
+{% for booking in bookings %}
+
+<h2>Class name: {{booking.exercise.description}}</h2>
+<h3>Instructor: {{booking.exercise.instructor}}</h3>
+<h3>When: {{booking.exercise.time}}</h3>
+<h3>Where: {{booking.exercise.location}}</h3>
+<h4>Max. numbers: {{booking.exercise._capacity}}</h4>
+
+<p>
+    <form action="/bookings/{{ booking.id }}/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+    </form>
+</p>
+
+
+{% endfor %}
+
+{%endblock%}

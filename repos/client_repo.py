@@ -42,6 +42,18 @@ def clients_for_exercises(exercise):
 
     return clients
 
+
+def exercises_for_clients(client):
+    exercises = []
+    sql = "SELECT exercises.* FROM exercises INNER JOIN bookings ON bookings.exercise_id = exercise.id WHERE client_id = %s"
+    values = [client.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        exercise = Exercise(row['description'], row['capacity'], row['instructor'], row['time'], row['location'], row['id'])
+        exercises.append(exercise)
+    return exercises
+
 def client_for_booking(booking):
     sql = "SELECT * FROM clients WHERE id = %s"
     values = [booking.client.id]

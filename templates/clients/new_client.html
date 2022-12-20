@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Add a buff new member to the crew:</h2>
+
+<form action="/clients" method="POST">
+    <div>
+        <label for="first_name">First Name: </label>
+        <input type="text" name="first_name" id="first_name">
+
+        <label for="last_name">Surname: </label>
+        <input type="text" name="last_name" id="last_name">
+
+        <label for="phone">Telephone Number: </label>
+        <input type="text" name="phone" id="phone">
+
+        <label for="gender">Gender: </label>
+        <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="NonBinary">NB</option>
+        </select>
+
+        <label for="medical">Any Existing Medical Conditions to be Aware of: </label>
+        <select name="medical" id="medical">
+            <option value="dodgy_knees">Dodgy Knees</option>
+            <option value="bad_heart">Bad Heart</option>
+            <option value="diabetes">Diabetes</option>
+            <option value="kidneys">Rubbish Kidneys</option>
+            <option value="asthma">Asthma</option>
+        </select
+
+
+
+        <input type="text" name="medical" id="medical">
+
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

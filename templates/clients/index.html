@@ -2,4 +2,22 @@
 
 {% block content %}
 
-{% endblock % }
+<nav>
+    <a href="/clients/new">Add New Client</a>
+</nav>
+
+<h1>Check out all your big, buff beauties below</h1>
+
+{% for clients in clients %}
+
+<a href="clients/{{clients.id}}">
+<h2>{{clients.first_name}} {{clients.last_name}}</h2>
+</a>
+<p>{{clients.phone_no}}</p>
+<p>{{clients.gender}}</p>
+<p>{{clients.medi_cond}}</p>
+
+
+{% endfor %}
+
+{% endblock %}
