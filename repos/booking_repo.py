@@ -63,3 +63,16 @@ def select_bookings_by_client_id(client_id):
         booking = Booking(client, exercise, each_booking['id'])
         bookings.append(booking)
     return bookings
+
+def select_bookings_by_exercise_id(exercise_id):
+    bookings = []
+    sql = "SELECT * FROM bookings WHERE exercise_id = %s"
+    values = [exercise_id]
+    results = run_sql(sql, values)
+    exercise = exercise_repo.select_exercise(exercise_id)
+    
+    for each_booking in results:
+        client = client_repo.select_client(each_booking['client_id'])
+        booking = Booking(client, exercise, each_booking['id'])
+        bookings.append(booking)
+    return bookings

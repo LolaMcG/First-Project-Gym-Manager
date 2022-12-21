@@ -6,7 +6,7 @@
 
 {% for exercise in exercises %}
 
-<a href="exercises/{{exercises.id}}">
+<a href="exercises/{{exercise.id}}">
 <h2>Class name: {{exercise.description}}</h2>
 </a>
 <h3>Instructor: {{exercise.instructor}}</h3>
@@ -14,6 +14,9 @@
 <h3>Where: {{exercise.location}}</h3>
 <h4>Max. numbers: {{exercise._capacity}}</h4>
 
+<a href="exercises/{{exercise.id}}/edit">
+    <input type="submit" value="Edit Class Info">
+</a>
 
 {% endfor %}
 

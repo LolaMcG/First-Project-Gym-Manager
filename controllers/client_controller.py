@@ -34,3 +34,21 @@ def add_new_client():
     new_client = Client(first_name, last_name, phone_no, gender, medi_cond)
     client_repo.save(new_client)
     return redirect ("/clients")
+
+
+@clients_blueprint.route("/clients/<id>/edit")
+def edit_client(id):
+    client = client_repo.select_client(id)
+    return render_template("clients/edit.html", client = client)
+
+
+@clients_blueprint.route("/clients/<id>", methods=["POST"])
+def update(id):
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    phone_no = request.form["phone"]
+    gender = request.form["gender"]
+    medi_cond = request.form["medical"]
+    new_client = Client(first_name, last_name, phone_no, gender, medi_cond, id)
+    client_repo.update_client(new_client)
+    return redirect("/clients")

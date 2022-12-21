@@ -14,7 +14,29 @@ def all_classes():
 
 
 @exercises_blueprint.route("/exercises/<id>")
-def single_class(id):
-    exercises = exercise_repo.select_exercise(id)
-    clients = client_repo.select_client(id)
-    return render_template("exercises/single_exercise.html", exercises = exercises, clients = clients)
+def single_exercise(id):
+    exercise = exercise_repo.select_exercise(id)
+    bookings = booking_repo.select_bookings_by_exercise_id(id)
+    return render_template("exercises/single_exercise.html", exercise = exercise, bookings = bookings)
+
+
+@exercises_blueprint.route("/exercises/new")
+def new_exercise():
+    return render_template("exercises/new_exercise.html")
+
+
+@exercises_blueprint.route("/exercises", methods=["POST"])
+def add_new_exercise_class():
+    description = request.form["description"]
+    capacity = request.form["capacity"]
+    instructor = request.form["instructor"]
+    time = request.form["time"]
+    location = request.form["location"]
+    new_exercise_class = Exercise(description, capacity, instructor, time, location)
+    exercise_repo.save(new_exercise_class)
+    return redirect ("/exercises")
+
+@exercises_blueprint.route("/exercises/<id>/edit")
+def edit_exercise(id):
+    exercise = exercise_repo.select_exercise(id)
+    return render_template("exercises/edit.html", exercise = exercise)

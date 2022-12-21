@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<a href="/exercises">Back to List of Classes</a>
 
-<h2>Well, well, well, look who's booked into {{exercise.description}}. Rock on.</h2>
+<h2>Well, well, well, look who's booked into '{{exercise.description}}'. Rock on.</h2>
 
-{% for client in clients %}
+{% for booking in bookings %}
 
 <p>{{booking.client.first_name}} {{booking.client.last_name}}</p>
 

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Add details for new class below</h2>
+
+<form action="/exercises" method="POST">
+    <div>
+        <label for="description">Class Name:</label>
+        <input type="text" name="description" id="description">
+
+        <div>
+            <label for="capacity">No more than</label>
+            <input type="text" name="capacity" id="capacity">
+            <span> people in the sesh</span>
+        </div>
+        
+        <label for="instructor">Who'll be running the show?</label>
+        <select name="instructor" id="instructor">
+            <option value="eddie">Eddie Hall</option>
+            <option value="sam">Sam Pilgrim</option>
+            <option value="craig">Craig 'Massive Legs' Crawford</option>
+            <option value="frank">Frank Bruno</option>
+        </select>
+
+        <label for="time">Whenabouts?</label>
+        <input type="time" name="time" id="time" min="04:00" max="22:00" step="900" value="04:00">
+
+        <label for="location">Whereabouts?:</label>
+        <input type="text" name="location" id="location">
+
+        <input type="submit" value="Add class to list">
+    </div>
+</form>
+
+{% endblock %}
