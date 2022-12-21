@@ -2,32 +2,43 @@
 
 {% block content %}
 
-<form action="/exercises/<id>/edit" method="POST">
+<nav>
+    <a href="/exercises">Back to List of Classes</a>
+</nav>
+
+<h1>Edit class info here</h1>
+
+<form action="/exercises/{{exercise.id}}" method="POST" id="edit-exercise-form">
     <div>
-        <label for="description">Class Name:</label>
-        <input type="text" name="description" id="description" value="{{exercise.description}}">
+        <label for="description" class="form-input">Class Name:</label>
+        <input type="text" name="description" id="description" value="{{exercise.description}}" class="form-input">
+        <br>
 
-        <div>
-            <label for="capacity">No more than</label>
-            <input type="text" name="capacity" id="capacity" value="{{exercise.capacity}}">
-            <span> people in the sesh</span>
-        </div>
         
-        <label for="instructor">Who'll be running the show?</label>
-        <select name="instructor" id="instructor" value="{{exercise.instructor}}">
-            <option value="eddie">Eddie Hall</option>
-            <option value="sam">Sam Pilgrim</option>
-            <option value="craig">Craig 'Massive Legs' Crawford</option>
-            <option value="frank">Frank Bruno</option>
+        <label for="capacity" class="form-input">No more than</label>
+        <input type="text" name="capacity" id="capacity" value="{{exercise._capacity}}" class="form-input">
+        <span> people in the sesh</span>
+        <br>
+        
+        
+        <label for="instructor" class="form-input">Who'll be running the show?</label>
+        <select name="instructor" id="instructor" class="form-input" value="{{exercise.instructor}}">
+            <option value="Eddie Hall">Eddie Hall</option>
+            <option value="Sam Pilgrim">Sam Pilgrim</option>
+            <option value="Craig 'Massive Legs' Crawford">Craig 'Massive Legs' Crawford</option>
+            <option value="Frank Bruno">Frank Bruno</option>
         </select>
+        <br>
 
-        <label for="time">Whenabouts?</label>
-        <input type="time" name="time" id="time" min="04:00" max="22:00" step="900" value="{{exercise.time}}">
+        <label for="time" class="form-input">Whenabouts?</label>
+        <input type="time" name="time" id="time" min="04:00" max="22:00" step="900" value="{{exercise.time}}" class="form-input">
+        <br>
 
-        <label for="location">Whereabouts?:</label>
-        <input type="text" name="location" id="location" value="{{exercise.location}}">
+        <label for="location" class="form-input">Whereabouts?</label>
+        <input type="text" name="location" id="location" value="{{exercise.location}}" class="form-input">
+        <br>
 
-        <input type="submit" value="Update Class deets">
+        <input type="submit" value="Update class deets" class="form-input">
     </div>
 </form>
 

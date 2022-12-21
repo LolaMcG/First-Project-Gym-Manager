@@ -1,23 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<ul>
-    <li>
-        <a href="/exercises">Exisitng Big Buff Classes</a>  | <a href="/exercises/new">Add New Class</a> 
-    </li>
-    <li>
-        <a href="/clients">Existing Big Buff Clients</a> | <a href="/clients/new">Add New Client</a>
-    </li>
-    <li>
-        <a href="/bookings">Bookings</a>  | <a href="/bookings/new"> Add New Booking</a>
-    </li>
-</ul>
 
 <h1>Welcome to the Big Buff Gym</h1>
 
+<div id="logo-float">
 <img id="roidman" src="static/images/pants.jpeg" alt="A very large 'roided up man">
 
-<p>Do you want to look like THIS?</p><br>
-<p>Then you've come to the right place</p>
+<p class="centre-div" id="float-over1">Do you want to look like THIS?</p><br>
+
+</div>
+<p class="centre-div" id="float-over2">Then you've come to the right place</p>
 
 {% endblock %}

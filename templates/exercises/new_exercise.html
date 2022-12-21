@@ -1,36 +1,45 @@
 {% extends 'base.html' %}
 
-{% block content %}
 
+{% block content %}
+<nav>
+    <a href="/exercises">Back to List of Classes</a>
+</nav>
+
+<section id="new-exercise">
 <h2>Add details for new class below</h2>
 
 <form action="/exercises" method="POST">
     <div>
-        <label for="description">Class Name:</label>
-        <input type="text" name="description" id="description" required>
+        <label for="description" class="form-input">Class Name:</label>
+        <input type="text" name="description" id="description" class="form-input" required>
 
         <div>
-            <label for="capacity">No more than</label>
-            <input type="text" name="capacity" id="capacity" required>
+            <label for="capacity" class="form-input">No more than</label>
+            <input type="text" name="capacity" id="capacity" class="form-input" required>
             <span> people in the sesh</span>
         </div>
         
-        <label for="instructor">Who'll be running the show?</label>
-        <select name="instructor" id="instructor" required>
-            <option value="eddie">Eddie Hall</option>
-            <option value="sam">Sam Pilgrim</option>
-            <option value="craig">Craig 'Massive Legs' Crawford</option>
-            <option value="frank">Frank Bruno</option>
+        <label for="instructor" class="form-input">Who'll be running the show?</label>
+        <select name="instructor" id="instructor" class="form-input" required>
+            <option value="Eddie Hall">Eddie Hall</option>
+            <option value="Sam Pilgrim">Sam Pilgrim</option>
+            <option value="Craig 'Massive Legs' Crawford">Craig 'Massive Legs' Crawford</option>
+            <option value="Frank Bruno">Frank Bruno</option>
         </select>
+        <br>
 
-        <label for="time">Whenabouts?</label>
-        <input type="time" name="time" id="time" min="04:00" max="22:00" step="900" value="04:00" required>
+        <label for="time" class="form-input">Whenabouts?</label>
+        <input type="time" name="time" id="time" min="04:00" max="22:00" step="900" value="04:00" class="form-input" required>
+        <br>
 
-        <label for="location">Whereabouts?:</label>
-        <input type="text" name="location" id="location" required>
+        <label for="location" class="form-input">Whereabouts?:</label>
+        <input type="text" name="location" id="location" class="form-input" required>
+        <br>
 
-        <input type="submit" value="Add class to list">
+        <input type="submit" value="Add class to list" class="form-input">
     </div>
 </form>
+</section>
 
 {% endblock %}

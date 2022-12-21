@@ -1,22 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content%}
+<nav>
+    <a href="/bookings">Back to List of Bookings</a>
+</nav>
+
+<h1>Create a new booking here</h1>
+<br>
 <form action="/bookings" method="POST">
-    <label for="client">Which Big Buff Client?</label>
-        <select name="client_id" id="client">
+    <label for="client" class="form-input">Which Big Buff Client?</label>
+        <select name="client_id" id="client" class="form-input">
         {% for client in clients %}
         <option value="{{client.id}}">{{client.first_name}} {{client.last_name}}</option>
         {% endfor %}
         </select>
+        <br>
 
-    <label for="exercise">Which Class?</label>
-        <select name="exercise_id" id="exercise">
+    <label for="exercise" class="form-input">Which Class?</label>
+        <select name="exercise_id" id="exercise" class="form-input">
             {% for exercise in exercises %}
             <option value="{{exercise.id}}">{{exercise.description}}</option>
             {% endfor %}
         </select>
+        <br>
 
-    <input type="submit" value="Create Booking">
+    <input type="submit" value="Create Booking" class="form-input">
 
 </form>
 

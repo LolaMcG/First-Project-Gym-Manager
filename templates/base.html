@@ -5,17 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap" rel="stylesheet">
     <title>Big Buff Gym</title>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
+    <nav id="logo-container">
+        <a href="/">
+            <img src="{{url_for ('static', filename='images/logo.png')}}" alt="gym logo" id="logo">
+        </a>
+    </nav>
+    <nav id="nav-container">
+        <ul id="nav">
+            <li>
+                <a href="/exercises">Existing Big Buff Classes</a>  | <a href="/exercises/new">Add New Class</a> 
+            </li>
+            <li>
+                <a href="/clients">Existing Big Buff Clients</a> | <a href="/clients/new">Add New Client</a>
+            </li>
+            <li>
+                <a href="/bookings">Bookings</a>  | <a href="/bookings/new"> Add New Booking</a>
+            </li>
+        </ul>
     </nav>
     <section>
         {% block content %}
-        
-        {% endblock %}
-        {% block otherContent%}
         
         {% endblock %}
 

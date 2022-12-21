@@ -7,6 +7,3 @@ class Exercise:
         self.time = time
         self.location = location
         self.id = id
-
-    def is_full(self, number):
-        return self._capacity < number

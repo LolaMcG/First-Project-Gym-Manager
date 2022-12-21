@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
+<nav id="back-client-nav">
 <a href="/clients">Back to Big Buff Clients</a>
+</nav>
 
-<h1>{{client.first_name}} {{client.last_name}} is booked in to the following classes:</h1>
+<h1 id="no-padding-header">{{client.first_name}} {{client.last_name}} is booked in to the following classes:</h1>
 
 
 {% for booking in bookings %}

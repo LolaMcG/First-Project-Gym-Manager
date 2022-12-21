@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="/exercises">Back to List of Classes</a>
+<nav>
+    <a href="/exercises">Back to List of Classes</a>
+</nav>
 
-<h2>Well, well, well, look who's booked into '{{exercise.description}}'. Rock on.</h2>
+<h2 class="down-header">Well, well, well, look who's booked into '{{exercise.description}}'. Rock on.</h2>
 
 {% for booking in bookings %}
 

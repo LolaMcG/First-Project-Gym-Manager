@@ -52,6 +52,12 @@ def exercise_for_booking(booking):
         return exercise
 
 
+def update_exercise(exercise):
+    sql = "UPDATE exercises SET description = %s, capacity = %s, instructor = %s, time = %s, location = %s WHERE id = %s"
+    values = [exercise.description, exercise._capacity, exercise.instructor, exercise.time, exercise.location, exercise.id]
+    run_sql(sql, values)
+
+
 def delete_exercise(id):
     sql = "DELETE FROM exercises WHERE id = %s"
     values = [id]

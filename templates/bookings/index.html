@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div id="move-down">
 {% for booking in bookings %}
+</div>
 
 <h2> {{booking.exercise.description}}:</h2>
-<p>{{booking.client.first_name}} {{booking.client.last_name}}</p> 
+<p>{{booking.client.first_name}} {{booking.client.last_name}}</p>
+</div>
 
 
 {% endfor %}

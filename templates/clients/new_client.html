@@ -1,37 +1,46 @@
 {% extends 'base.html' %}
-{% block content %}
 
-<h2>Add a buff new member to the crew:</h2>
+{% block content %}
+<nav>
+    <a href="/clients">Back to Big Buff Clients</a>
+</nav>
+
+<h2 class="down-header">Add a buff new member to the crew:</h2>
 
 <form action="/clients" method="POST">
     <div>
-        <label for="first_name">First Name: </label>
-        <input type="text" name="first_name" id="first_name" required>
+        <label for="first_name" class="form-input">First Name: </label>
+        <input type="text" name="first_name" id="first_name" class="form-input" required>
+        <br>
 
-        <label for="last_name">Surname: </label>
-        <input type="text" name="last_name" id="last_name" required>
+        <label for="last_name" class="form-input">Surname: </label>
+        <input type="text" name="last_name" id="last_name" class="form-input" required>
+        <br>
 
-        <label for="phone">Telephone Number: </label>
-        <input type="text" name="phone" id="phone">
+        <label for="phone" class="form-input">Telephone Number: </label>
+        <input type="text" name="phone" id="phone" class="form-input">
+        <br>
 
-        <label for="gender">Gender: </label>
-        <select name="gender" id="gender">
+        <label for="gender" class="form-input">Gender: </label>
+        <select name="gender" id="gender" class="form-input">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="NonBinary">NB</option>
         </select>
+        <br>
 
-        <label for="medical">Any Existing Medical Conditions to be Aware of: </label>
-        <select name="medical" id="medical">
+        <label for="medical" class="form-input">Any Existing Medical Conditions to be Aware of: </label>
+        <select name="medical" id="medical" class="form-input">
+            <option value="None">None</option>
             <option value="Dodgy Knees">Dodgy Knees</option>
             <option value="Bad Heart">Bad Heart</option>
             <option value="Diabetes">Diabetes</option>
             <option value="Kidneys">Rubbish Kidneys</option>
             <option value="Asthma">Asthma</option>
-            <option value="None">None</option>
         </select>
+        <br>
         
-        <input type="submit" value="Add member">
+        <input type="submit" value="Add member" class="form-input">
     </div>
 </form>
 

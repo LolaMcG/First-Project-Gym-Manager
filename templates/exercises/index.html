@@ -5,9 +5,9 @@
 <h1>Shred sesh's on offer</h1>
 
 {% for exercise in exercises %}
-
+<section class="flex-section">
 <a href="exercises/{{exercise.id}}">
-<h2>Class name: {{exercise.description}}</h2>
+<h2 class="underline-header">Class name: {{exercise.description}}</h2>
 </a>
 <h3>Instructor: {{exercise.instructor}}</h3>
 <h3>When: {{exercise.time}}</h3>
@@ -17,7 +17,7 @@
 <a href="exercises/{{exercise.id}}/edit">
     <input type="submit" value="Edit Class Info">
 </a>
-
+</section>
 {% endfor %}
 
 {% endblock %}

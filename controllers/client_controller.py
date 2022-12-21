@@ -49,6 +49,6 @@ def update(id):
     phone_no = request.form["phone"]
     gender = request.form["gender"]
     medi_cond = request.form["medical"]
-    new_client = Client(first_name, last_name, phone_no, gender, medi_cond, id)
-    client_repo.update_client(new_client)
+    revised_client = Client(first_name, last_name, phone_no, gender, medi_cond, id)
+    client_repo.update_client(revised_client)
     return redirect("/clients")

@@ -36,7 +36,20 @@ def add_new_exercise_class():
     exercise_repo.save(new_exercise_class)
     return redirect ("/exercises")
 
+
 @exercises_blueprint.route("/exercises/<id>/edit")
 def edit_exercise(id):
     exercise = exercise_repo.select_exercise(id)
     return render_template("exercises/edit.html", exercise = exercise)
+
+
+@exercises_blueprint.route("/exercises/<id>", methods=["POST"])
+def update(id):
+    description = request.form['description']
+    capacity = request.form['capacity']
+    instructor = request.form['instructor']
+    time = request.form['time']
+    location = request.form['location']
+    revised_exercise = Exercise(description, capacity, instructor, time, location, id)
+    exercise_repo.update_exercise(revised_exercise)
+    return redirect("/exercises")

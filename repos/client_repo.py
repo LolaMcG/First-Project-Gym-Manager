@@ -63,6 +63,12 @@ def client_for_booking(booking):
         return client
 
 
+def update_client(client):
+    sql = "UPDATE clients SET first_name = %s, last_name = %s, phone_no  = %s, gender  = %s, medi_cond = %s WHERE id = %s"
+    values = [client.first_name, client.last_name, client.phone_no, client.gender, client.medi_cond, client.id]
+    run_sql(sql, values)
+
+
 def delete_all():
     sql = "DELETE FROM clients"
     run_sql(sql)
@@ -71,10 +77,4 @@ def delete_all():
 def delete_client(id):
     sql = "DELETE FROM clients WHERE id = %s"
     values = [id]
-    run_sql(sql, values)
-
-
-def update_client(client):
-    sql = "UPDATE clients SET first_name = %s, last_name = %s, phone_no  = %s, gender  = %s, medi_cond = %s WHERE id = %s"
-    values = [client.first_name, client.last_name, client.phone_no, client.gender, client.medi_cond, client.id]
     run_sql(sql, values)
